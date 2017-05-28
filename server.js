@@ -7,24 +7,26 @@ var bodyParser = require('body-parser');
 var calcArray = [];
 
 
-app.use( express.static( 'public' ) );
-app.use( bodyParser.urlencoded( { extended: true } ) );
+app.use(express.static('public'));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
-app.listen(3000, function(req, res){
+app.listen(3000, function(req, res) {
     console.log('server up on 3000');
 });
 
-app.get('/', function(req, res){
+app.get('/', function(req, res) {
     console.log('/ url hit');
     res.sendFile(path.resolve("view/index.html"));
 });
 
 
-app.post('/calculate', function(req, res){
+app.post('/calculate', function(req, res) {
     console.log('/calculate url hit');
 
     var calcObjectToSend = {
-        calc:calcArray
+        calc: calcArray
     };
     calculateReq(req);
     res.send(calcObjectToSend);
@@ -39,22 +41,19 @@ function calculateReq(req) {
         req.body.result = add;
         calcArray.push(req.body);
 
-    }
-    else if (req.body.type === 'sub') {
+    } else if (req.body.type === 'sub') {
         console.log('server recieved sub');
-        var sub  = Number(req.body.x) - Number(req.body.y);
+        var sub = Number(req.body.x) - Number(req.body.y);
         req.body.result = sub;
         calcArray.push(req.body);
-    }
-    else if (req.body.type === 'mult') {
+    } else if (req.body.type === 'mult') {
         console.log('server recieved mult');
-        var mult  = Number(req.body.x) * Number(req.body.y);
+        var mult = Number(req.body.x) * Number(req.body.y);
         req.body.result = mult;
         calcArray.push(req.body);
-    }
-    else if (req.body.type === 'div') {
+    } else if (req.body.type === 'div') {
         console.log('server recieved div');
-        var div  = Number(req.body.x) / Number(req.body.y);
+        var div = Number(req.body.x) / Number(req.body.y);
         req.body.result = div;
         calcArray.push(req.body);
     }
