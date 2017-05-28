@@ -3,7 +3,9 @@
     <head>
         <meta charset="utf-8">
         <title>Calculator</title>
-        <link rel="stylesheet" href="style/style.css">
+
+        <link rel="stylesheet" href="styles/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
         <script
   src="https://code.jquery.com/jquery-3.2.1.js"
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
@@ -11,15 +13,29 @@
 <script src="scripts/scripts.js" charset="utf-8"></script>
     </head>
     <body>
-        <h1>Hello World</h1>
-        <input id = 'firstInput'  type="number" placeholder="Input here">
-        <input id = 'secondInput' type="number" placeholder="Input here">
-        <p id= "equals">Results</p>
-        <button id = 'addButton' class ='calculatorButton' type="button" name="button">+</button>
-        <button id = 'subButton' class ='calculatorButton' type="button" name="button">-</button>
-        <button id = 'multButton' class ='calculatorButton' type="button" name="button">X</button>
-        <button id = 'divButton' class ='calculatorButton' type="button" name="button">/</button>
-
+        <h1>Calculator</h1>
+        <div class="numContainer">
+            <p id = 'inputField'></p>
+            <br>
+            <button class ='calculatorNum' type="button" name="button">1</button>
+            <button class ='calculatorNum' type="button" name="button">2</button>
+            <button class ='calculatorNum' type="button" name="button">3</button>
+            <button id = 'addButton' class ='calculatorNum' type="button" name="button">+</button>
+            <br>
+            <button class ='calculatorNum' type="button" name="button">4</button>
+            <button class ='calculatorNum' type="button" name="button">5</button>
+            <button class ='calculatorNum' type="button" name="button">6</button>
+            <button id = 'subButton' class ='calculatorNum' type="button" name="button">-</button>
+            <br>
+            <button class ='calculatorNum' type="button" name="button">7</button>
+            <button class ='calculatorNum' type="button" name="button">8</button>
+            <button class ='calculatorNum' type="button" name="button">9</button>
+            <button id = 'multButton' class ='calculatorNum' type="button" name="button">X</button>
+            <br>
+            <button  id = 'clearButton' class ='calculatorNum' placeholder = 'cleared'>Clear</button>
+            <button  class ='calculatorNum' type="button" name="button">=</button>
+            <button  class ='calculatorNum' type="button" name="button">/</button>
+        </div>
 
     </body>
 </html>
