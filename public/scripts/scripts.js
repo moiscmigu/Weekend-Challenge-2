@@ -67,9 +67,23 @@ function buttonClicked() {
             url: '/calculate',
             data: objectToSend,
             success: function(res) {
+
                 console.log('back from the server with ', res);
-                console.log(res.calc[0].result);
+                console.log('waitin for respond');
+
+                $("#inputField").text('Calculating');
+
+                setTimeout(function(){
+                    $("#inputField").text('Calculating.');
+                }, 1000);
+                setTimeout(function(){
+                    $("#inputField").text('Calculating..');
+                }, 2000);
+
+                setTimeout(function(){
                 $("#inputField").text(res.calc[res.calc.length - 1].result);
+                }, 3000);
+
             } //end of success
         }); //end of ajax
     } //end of if statement

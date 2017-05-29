@@ -29,7 +29,10 @@ app.post('/calculate', function(req, res) {
         calc: calcArray
     };
     calculateReq(req);
-    res.send(calcObjectToSend);
+    
+        res.send(calcObjectToSend);
+
+
 
 });
 
